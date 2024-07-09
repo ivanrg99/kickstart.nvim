@@ -806,6 +806,12 @@ require('lazy').setup({
     end,
   },
   { 'ellisonleao/gruvbox.nvim', name = 'gruvbox', priority = 1000 },
+  { 'projekt0n/github-nvim-theme', name = 'github-theme', priority = 1000 },
+  {
+    'maxmx03/solarized.nvim',
+    lazy = false,
+    priority = 1000,
+  },
   { 'bluz71/vim-moonfly-colors', name = 'moonfly', priority = 1000 },
   { 'EdenEast/nightfox.nvim', name = 'nightfox', priority = 1000 },
   { 'miikanissi/modus-themes.nvim', priority = 1000 },
@@ -1001,4 +1007,5 @@ require('gruvbox').setup {
   dim_inactive = false,
   transparent_mode = false,
 }
-vim.cmd 'colorscheme gruvbox'
+vim.cmd 'colorscheme github_dark_high_contrast'
+-- vim.o.background = 'dark' -- or 'light'
