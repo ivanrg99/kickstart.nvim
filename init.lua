@@ -389,7 +389,7 @@ require('lazy').setup({
       end, { desc = '[S]earch [E]rrors' })
       vim.keymap.set('n', '<leader>sr', builtin.resume, { desc = '[S]earch [R]esume' })
       vim.keymap.set('n', '<leader>s.', builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
-      vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = '[ ] Find existing buffers' })
+      -- vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = '[ ] Find existing buffers' })
 
       -- Slightly advanced example of overriding default behavior and theme
       vim.keymap.set('n', '<leader>/', function()
@@ -802,6 +802,8 @@ require('lazy').setup({
       vim.cmd.hi 'Comment gui=none'
     end,
   },
+  { 'easymotion/vim-easymotion', name = 'easymotion', priority = 1000 },
+  -- { 'ggandor/leap.nvim', name = 'leap', priority = 1000 },
   { 'ellisonleao/gruvbox.nvim', name = 'gruvbox', priority = 1000 },
   { 'projekt0n/github-nvim-theme', name = 'github-theme', priority = 1000 },
   {
@@ -812,7 +814,8 @@ require('lazy').setup({
   { 'bluz71/vim-moonfly-colors', name = 'moonfly', priority = 1000 },
   { 'EdenEast/nightfox.nvim', name = 'nightfox', priority = 1000 },
   { 'miikanissi/modus-themes.nvim', priority = 1000 },
-  { 'Pocco81/auto-save.nvim', name = 'auto-save', lazy = false },
+  { 'Soares/base16.nvim', priority = 1000 },
+  --{ 'Pocco81/auto-save.nvim', name = 'auto-save', lazy = false },
   { 'mbbill/undotree', name = 'undotree' },
   { 'agude/vim-eldar', name = 'eldar', lazy = true },
   { 'bignimbus/pop-punk.vim', name = 'pop-punk', lazy = true, priority = 1000 },
@@ -820,43 +823,43 @@ require('lazy').setup({
   { 'wojciechkepka/vim-github-dark', name = 'github', lazy = false, priority = 1000 },
   -- Highlight todo, notes, etc in comments
   { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
-  -- {
-  --   'folke/trouble.nvim',
-  --   opts = {}, -- for default options, refer to the configuration section for custom setup.
-  --   cmd = 'Trouble',
-  --   -- keys = {
-  --   --   {
-  --   --     '<leader>xx',
-  --   --     '<cmd>Trouble diagnostics toggle<cr>',
-  --   --     desc = 'Diagnostics (Trouble)',
-  --   --   },
-  --   --   {
-  --   --     '<leader>xX',
-  --   -- '<cmd>Trouble diagnostics toggle filter.buf=0<cr>',
-  --   --     desc = 'Buffer Diagnostics (Trouble)',
-  --   --   },
-  --   --   {
-  --   --     '<leader>cs',
-  --   --     '<cmd>Trouble symbols toggle focus=false<cr>',
-  --   --     desc = 'Symbols (Trouble)',
-  --   --   },
-  --   --   {
-  --   --     '<leader>cl',
-  --   --     '<cmd>Trouble lsp toggle focus=false win.position=right<cr>',
-  --   --     desc = 'LSP Definitions / references / ... (Trouble)',
-  --   --   },
-  --   --   {
-  --   --     '<leader>xL',
-  --   --     '<cmd>Trouble loclist toggle<cr>',
-  --   --     desc = 'Location List (Trouble)',
-  --   --   },
-  --   --   {
-  --   --     '<leader>xQ',
-  --   --     '<cmd>Trouble qflist toggle<cr>',
-  --   --     desc = 'Quickfix List (Trouble)',
-  --   --   },
-  --   -- },
-  -- },
+  {
+    'folke/trouble.nvim',
+    opts = {}, -- for default options, refer to the configuration section for custom setup.
+    cmd = 'Trouble',
+    keys = {
+      {
+        '<leader>xx',
+        '<cmd>Trouble diagnostics toggle<cr>',
+        desc = 'Diagnostics (Trouble)',
+      },
+      {
+        '<leader>xX',
+    '<cmd>Trouble diagnostics toggle filter.buf=0<cr>',
+        desc = 'Buffer Diagnostics (Trouble)',
+      },
+      {
+        '<leader>cs',
+        '<cmd>Trouble symbols toggle focus=false<cr>',
+        desc = 'Symbols (Trouble)',
+      },
+      {
+        '<leader>cl',
+        '<cmd>Trouble lsp toggle focus=false win.position=right<cr>',
+        desc = 'LSP Definitions / references / ... (Trouble)',
+      },
+      {
+        '<leader>xL',
+        '<cmd>Trouble loclist toggle<cr>',
+        desc = 'Location List (Trouble)',
+      },
+      {
+        '<leader>xQ',
+        '<cmd>Trouble qflist toggle<cr>',
+        desc = 'Quickfix List (Trouble)',
+      },
+    },
+  },
 
   { -- Collection of various small independent plugins/modules
     'echasnovski/mini.nvim',
@@ -1004,8 +1007,11 @@ require('gruvbox').setup {
   dim_inactive = false,
   transparent_mode = false,
 }
+
 -- vim.cmd 'colorscheme github_dark_high_contrast'
-vim.cmd 'colorscheme lunaperche'
+--vim.cmd 'colorscheme gruvbox'
+--vim.cmd 'colorscheme atelier-lakeside'
+vim.cmd 'colorscheme moonfly'
+-- vim.cmd 'colorscheme quiet'
+-- vim.cmd 'colorscheme carbonfox'
 -- vim.cmd 'colorscheme vim'
--- vim.opt.termguicolors = false
--- vim.o.background = 'dark' -- or 'light'
