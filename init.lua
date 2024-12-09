@@ -981,6 +981,7 @@ vim.o.wrap = false
 vim.keymap.set('n', '<leader>tu', ':UndotreeToggle<CR>', { desc = '[T]oggle [U]ndotree' })
 vim.keymap.set('n', '<leader>k', '<cmd>cnext<CR>zz')
 vim.keymap.set('n', '<leader>j', '<cmd>cprev<CR>zz')
+vim.keymap.set("i", "jj", "<ESC>", { silent = true })
 
 -- Default options:
 require('gruvbox').setup {
@@ -1007,6 +1008,7 @@ require('gruvbox').setup {
   dim_inactive = false,
   transparent_mode = false,
 }
+
 
 -- vim.cmd 'colorscheme github_dark_high_contrast'
 --vim.cmd 'colorscheme gruvbox'
